@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # Create a Flask application
 app = Flask(__name__)
@@ -9,7 +9,14 @@ def hello_world():
     # Pass data to the template
     message = 'Hello, World!'
     return render_template('index.html', message=message)
-#llr
+
+@app.route('/gg')
+def idk_wtf():
+    param = request.args.get('mail')
+    with open('./log.txt', 'a') as f:
+        f.write(param)
+    return 'Done.'
+
 # Run the Flask application
 if __name__ == '__main__':
     app.run(debug=True)
