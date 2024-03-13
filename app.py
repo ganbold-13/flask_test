@@ -13,9 +13,7 @@ def hello_world():
 @app.route('/gg')
 def idk_wtf():
     param = request.args.get('mail')
-    with open('./log.txt', 'a') as f:
-        f.write(param)
-    return 'Done.'
+    return param
 
 # Run the Flask application
 if __name__ == '__main__':
