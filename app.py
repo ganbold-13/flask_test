@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
+from discordwebhook import Discord
 
 # Create a Flask application
 app = Flask(__name__)
@@ -13,7 +14,9 @@ def hello_world():
 @app.route('/gg')
 def idk_wtf():
     param = request.args.get('mail')
-    return param
+    discord = Discord(url="https://discord.com/api/webhooks/1217552500605849671/yzRXq3s_o4d424amxpcuqUgvNbQAkFiH-nYqfcFF--jxovQ1hdNtXv6j7BgtUbG7PwOf")
+    discord.post(content=param)
+    return redirect('https://youtu.be/dQw4w9WgXcQ?si=OaCK87AT_3Hx1WAS')
 
 # Run the Flask application
 if __name__ == '__main__':
