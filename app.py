@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect
 from discordwebhook import Discord
+from flask_cors import CORS
 
 # Create a Flask application
 app = Flask(__name__)
 
+CORS(app)
 # Define a route for the root URL '/'
 @app.route('/')
 def hello_world():

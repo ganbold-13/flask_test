@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World!</title>
+    <title>HTTP GET Request with XMLHttpRequest</title>
 </head>
 <body>
     <h1>{{ message }}</h1>
+    <button id="fetchData">Fetch Data</button>
+
+    <script>
+        document.getElementById('fetchData').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            var url = 'https://trader.tdbsecurities.mn/api/auth/session'; // Replace with your URL
+
+            xhr.open('GET', url);
+
+            // Set custom headers
+            //xhr.setRequestHeader('Content-Type', 'application/json');
+            //xhr.setRequestHeader('Authorization', 'Bearer YOUR_ACCESS_TOKEN'); // Replace with your token
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        alert(xhr.responseText);
+                    } else {
+                        alert('Error: ' + xhr.status);
+                    }
+                }
+            };
+
+            xhr.send();
+        });
+    </script>
 </body>
 </html>
